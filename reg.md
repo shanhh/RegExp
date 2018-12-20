@@ -19,3 +19,18 @@ reg.test("12312312"); //false
 reg.test("1a2321"); //true
 reg.test("aaaaaa"); //false
 ```
+#### 3、必须包含数字和字母的6位或7位组合
+
+正则的小括号和$1在nginx中配置
+
+```javascript
+location ~ ^/shanhaohui/(.*) {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_http_version 1.1;
+            proxy_pass http://192.168.1.52:18282/$1;
+            proxy_redirect off;
+    }
+```
+
